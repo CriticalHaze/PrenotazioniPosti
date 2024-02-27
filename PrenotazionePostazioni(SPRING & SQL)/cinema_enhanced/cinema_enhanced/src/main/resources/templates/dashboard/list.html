@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged</title>
+</head>
+<body>
+<h1> Ciao <span th:text="${loggedUser.username}"></span> </h1>
+<h3>Per quale data vuoi prenotare?</h3>
+<form th:action="@{/azione/seldata}" method="post">
+    <input type="hidden" name="id_utente" th:value="${loggedUser.id}" />
+    <input type="date" name="data_prenotazione" id="data_prenotazione" />
+    <button type="submit">Avanti</button>
+</form>
+</body>
+</html>

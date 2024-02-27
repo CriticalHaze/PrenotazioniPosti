@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged</title>
+</head>
+<body>
+<h1> Ciao <span th:text="${loggedUser.username}"></span> </h1>
+<h3>Scegli una postazione tra quelle libere</h3>
+<table>
+    <thead>
+    <tr>
+        <th> ID </th>
+        <th> Nome </th>
+        <th> Occupata </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${postazioni}">
+        <td><span th:text="${p.id}"> ID </span></td>
+        <td><span th:text="${p.nome}"> Nome </span></td>
+        <td><span th:text="${p.occupata}"> Occupata </span></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
